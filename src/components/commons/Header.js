@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { MenuButton } from './MenuButton';
+import { MenuButton } from '../MenuButton';
 import { Actions } from 'react-native-router-flux';
 
 const Header = props => {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
-import { Header } from './Header';
+import { Header } from './commons/Header';
 
 export default class Me extends Component {
   render() {

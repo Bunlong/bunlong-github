@@ -6,10 +6,10 @@ import {
   Drawer,
 } from 'react-native-router-flux';
 
-import MenuContent from './MenuContent';
-import SplashScreen from './SplashScreen';
-import Home from './Home';
-import Me from './Me';
+import MenuContent from './components/MenuContent';
+import SplashScreen from './components/SplashScreen';
+import Home from './components/Home';
+import Me from './components/Me';
 
 export const RouterComponent = () => {
   return (
