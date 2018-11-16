@@ -3,16 +3,16 @@ import { StyleSheet } from 'react-native';
 import SplashScreenMask from 'react-native-splash-screen-mask';
 import { Actions } from 'react-native-router-flux';
 
-import IMAGE from '../assets/react.png';
+import IMAGE from '../../assets/react.png';
 
 export default class SplashScreen extends Component {
   render() {
     return (
       <SplashScreenMask
         imageSource={IMAGE}
-        navigationAction={() => Actions.homeScene()}
+        navigationAction={() => Actions.meScene()}
         backgroundStyle={styles.backgroundStyle}
-        duration={3000}
+        duration={500}
       />
     );
   }

@@ -12,7 +12,7 @@ export const MenuSection = ({ text, action }) => (
     </Text>
     <Image
       style={styles.image}
-      source={require('../assets/arrow.png')}
+      source={require('../../assets/arrow.png')}
     />
   </TouchableOpacity>
 );

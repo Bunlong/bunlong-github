@@ -6,7 +6,7 @@ const MenuButton = ({ onPress }) => (
     <TouchableOpacity onPress={onPress} style={styles.button}>
       <Image
         style={styles.image}
-        source={require('../assets/menu.png')}
+        source={require('../../assets/menu.png')}
       />
     </TouchableOpacity>
   </View>

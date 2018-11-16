@@ -13,7 +13,7 @@ class MenuContent extends Component {
           action={Actions.homeScene}
         />
         <MenuSection
-          text="Me"
+          text="Profile"
           action={Actions.meScene}
         />
       </View>
