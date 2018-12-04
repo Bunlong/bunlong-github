@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 
 import { Header } from './commons/Header';
-import { getMe } from '../actions/me.js';
+import { getMe, getStarred } from '../actions/me';
 
 export default class Me extends Component {
   state = {
@@ -25,6 +25,7 @@ export default class Me extends Component {
     location: null,
     blog: null,
     bio: null,
+    starred: [],
   };
 
   async componentDidMount() {
@@ -45,6 +46,13 @@ export default class Me extends Component {
         });
       }
     });
+
+    getStarred().then((res) => {
+      const [status, jsonObject] = res;
+      if (status === 200) {
+        this.setState({ starred: jsonObject });
+      }
+    });
   }
 
   render() {
@@ -59,10 +67,11 @@ export default class Me extends Component {
       location,
       blog,
       bio,
+      starred,
     } = this.state;
 
     return (
-      <View>
+      <ScrollView>
         <Header />
         <ScrollView horizontal={true}>
           <View style={styles.navContainer}>
@@ -119,10 +128,17 @@ export default class Me extends Component {
         </View>
         <View style={styles.bgWhite}>
           <Text>
-            Pinned repositories
+            Starred
           </Text>
+          <View style={styles.listWrapper}>
+            {
+              starred.map(function(item, i){
+                return <Text style={styles.listItem}>{item.name}</Text>
+              })
+            }
+          </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
@@ -191,5 +207,20 @@ const styles = StyleSheet.create({
     marginTop: 37,
     borderTopWidth: 0.5,
     borderTopColor: "grey",
+  },
+  listWrapper: {
+    marginTop: 15,
+    marginBottom: 15,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    backgroundColor:'#fff',
+    borderRadius: 4,
+    borderWidth: 1,
+    borderColor: '#ccc'
+  },
+  listItem: {
+    marginTop: 10,
   },
 });

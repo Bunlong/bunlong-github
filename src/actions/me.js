@@ -3,7 +3,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 
 const API_ENDPOINT = "https://api.github.com";
 
-const FETCH_TIMEOUT = 1000 * 30;
+const FETCH_TIMEOUT = (1000 * 30);
 const fetchWithTimeout = (url, options) => new Promise((resolve, reject) => {
   const timer = setTimeout(() => {
     reject(new Error('Request timed out'));
@@ -40,3 +40,5 @@ const requestAPI = async (method, path, data, opts = { showAuthNErr: true }) => 
 };
 
 export const getMe = async () => requestAPI('GET', '/users/bunlong');
+
+export const getStarred = async () => requestAPI('GET', '/users/bunlong/starred');
